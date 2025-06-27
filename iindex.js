@@ -1,11 +1,12 @@
 // console.log("Backend developer")
 
 require('dotenv').config()
+
 const express = require('express') //a variable(import express) using require fn. of    express, as it imported, we can use all the fn. of it
 const app = express()   // import app , a fn of express --> 
 const port = 3000   // import port : sometimes may busy this port on that time have to use another port using .env --> port = 4000
 
-const githubData = 
+// const githubData =  // after deployed application (production) all data will come here
 
 app.get('/', (req, res) => {    // get is a request, '/' is home route, use with callback
   res.send('Hello World!')  // send is for print/output 'res' is the place-> where the response called
@@ -29,7 +30,7 @@ app.get('/youtube', (req, res) => {
 // })
 
 app.get('/github', (req, res) => {
-    res.json(githubData)
+    res.json(githubData)    //deployed data which is stored in githubData
 })
 
 app.listen(process.env.PORT, () => {  
